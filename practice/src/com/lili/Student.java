@@ -10,6 +10,7 @@ public class Student {
     public Student() {
     }
 
+
     public Student(String name, int age, int score) {
         this.name = name;
         this.age = age;

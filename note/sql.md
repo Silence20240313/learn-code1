@@ -57,14 +57,31 @@ SELECT name,salary from employees order by salary desc limit 1;
 -- 6.按薪水从高到低排序，显示前 3 名员工的信息。
 SELECT * from employees order by salary desc limit 3;
 
--- 7.查询每个员工的姓名、部门名称和部门所在地。
-SELECT e.name AS employee_name, d.name AS department_name, d.location 
-FROM employees e
-JOIN departments d ON e.department_id = d.id;
+-- 7.查询每个员工的姓名、部门名称。
+SELECT e.name,d.name from employees e left join departments d on e.department_id = d.id;
 
--- 8.查询薪水高于所有 "HR" 部门员工薪水的员工信息。
-SELECT * FROM employees 
-WHERE salary > (SELECT MAX(salary) FROM employees WHERE department_id = 1);
+-- 8.查询薪水高于所有 "HR" 部门员工最高薪水的员工信息。
+SELECT
+*
+from
+employees
+where
+salary > (
+SELECT
+salary
+from
+employees
+where
+department_id = (
+SELECT
+id
+from
+departments
+where
+name = 'HR')
+ORDER BY
+salary DESC
+LIMIT 1);
 
 -- 9.更新 "Marketing" 部门所有员工的薪水，增加 10%。
 -- 第一步先查出Marketing所对应的id

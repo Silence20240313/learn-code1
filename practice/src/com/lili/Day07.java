@@ -86,24 +86,29 @@ public class Day07 {
 
     }
 
+    // 方法1：接收一个字符串，返回它的第一个字符
     public static char getFirstChar(String s) {
         return s.charAt(0);
     }
 
+    // 方法2：接收一个字符串，返回它的最后一个字符
     public static char getLastChar(String s) {
         return s.charAt(s.length() - 1);
     }
 
+    // 方法3：接收一个字符串，一个字符，返回这个字符在字符串中第一次出现的索引
     public static int getFirstIndex(String s, char c) {
         int index = s.indexOf(c);
         return index;
     }
 
+    // 方法4：接收一个字符串，一个字符，返回这个字符在字符串中最后一次出现的索引
     public static int getLastIndex(String s, char c) {
         int index = s.lastIndexOf(c);
         return index;
     }
 
+    // 方法5：接收一个字符串，翻转后返回
     public static String reverseString(String s) {
         String result = "";
         for (int i = s.length() - 1; i >= 0 ; i--) {
@@ -112,6 +117,7 @@ public class Day07 {
         return result;
     }
 
+    // 方法6：接收一个整数，获取绝对值
     public static int getAbs(int i) {
         if (i < 0) {
             i = i * -1;
@@ -119,6 +125,7 @@ public class Day07 {
         return i;
     }
 
+    // 方法7：接收两个整数，返回较大值
     public static int getMax(int a, int b) {
         if (a > b) {
            return a;
@@ -126,6 +133,7 @@ public class Day07 {
         return b;
     }
 
+    // 方法8：接收两个整数，返回较小值
     public static int getMin(int a, int b) {
         if (a < b) {
             return a;
@@ -133,16 +141,19 @@ public class Day07 {
         return b;
     }
 
+    // 方法9：接收一个整数，获取他的平方根
     public static int getHeiPouKon(int a) {
         a = a * a;
         return a;
     }
 
+    // 方法10：接收一个整数，获取他的立方根
     public static int getRiPouKon(int a) {
         a = a * a * a;
         return a;
     }
 
+    // 方法11：接收一个整数，获取他的阶乘
     public static int getKaiJou(int a) {
         int result = 1;
         for (int i = 1; i <= a ; i++) {
@@ -151,6 +162,7 @@ public class Day07 {
         return result;
     }
 
+    // 方法12：接收一个List，返回其中的偶数到一个新的List中
     public static List<Integer> getEven(List<Integer> list) {
         List<Integer> result = new ArrayList<>();
         for(Integer num : list) {
@@ -161,6 +173,7 @@ public class Day07 {
         return result;
     }
 
+    // 方法13：接收一个List，返回其中最大的一个数（List中最小的数为-100）
     public static int getMax2(List<Integer> list) {
         int result = -101;
         for (Integer num : list) {
@@ -171,6 +184,7 @@ public class Day07 {
         return result;
     }
 
+    // 方法14：接收两个List，查看两个List中共有的交集数字，返回相加的和
     public static int getSum(List<Integer> list1, List<Integer> list2) {
         int result = 0;
         for (Integer num : list1) {
@@ -181,6 +195,7 @@ public class Day07 {
         return result;
     }
 
+    // 方法15：接收一个字符串，判断是否是回文字符串
     public static boolean judge(String s) {
         char[] chars = s.toCharArray();
         int start = 0;
